@@ -25,7 +25,7 @@
     }
     $kwe = "DELETE FROM `uczniowie_2c` WHERE Imie = '$imie' AND Nazwisko = '$nazwisko'";
     if (mysqli_query($pol, $kwe)){
-        echo "<br>"."Uczeń wyrzucony";
+        echo "Uczeń wyrzucony";
     }
     else{
         echo"Nie Działa";
