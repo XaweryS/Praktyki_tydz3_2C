@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+#tab{
+    border: 3px dotted black;
+    margin-top: 10px;
+    width: 15%;
+}
+#Pow{
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
