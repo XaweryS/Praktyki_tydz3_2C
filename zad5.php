@@ -10,13 +10,8 @@
         <p>Imie:</p><input type="text" name="imie"><br>
         <p>Nazwisko:</p><input type="text" name="nazwisko"><br><br>
         <button type="submit">Usuń</button>
-    </form><br>
-    <footer>
-        <a href="SG.html">Powrót do Strony głuwnej</a>
-    </footer>
-</body>
-</html>
-<?php
+    </form>
+    <?php
     $user = "root";
     $host = "localhost";
     $pass = "";
@@ -37,3 +32,6 @@
     }
     mysqli_close($con);
 ?>
+<a href="StronaG.html">Powrót</a>
+</body>
+</html>

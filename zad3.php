@@ -11,7 +11,7 @@
     <input type="text" name="imie"><br>
     <input type="text" name="nazwisko"><br>
     <input type="number" name="wiek"><br>
-    <button type="submit">wyslij</button>
+    <button type="submit">Wyslij</button>
 </form>
 <?php
     $urz = "root";
@@ -23,7 +23,7 @@
     $wiek = $_POST['wiek'];
     $pol = mysqli_connect($ho, $urz, $haslo, $baza);
     if(!$pol){
-        die("Nie działa połączenie" . mysqli_connect_error());
+        die("Nie działa pol" . mysqli_connect_error());
     }
     $kwe = "INSERT INTO uczniowie_2c (imie, nazwisko,wiek) VALUES ('$imie', '$nazwisko','$wiek')";
     if (mysqli_query($pol, $kwe)){
@@ -34,7 +34,6 @@
     }
     mysqli_close($pol);
 ?>
-<br>
-<a id="pow" href="StronaG.html">Powrót</a>
+<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>

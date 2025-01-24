@@ -3,43 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style3.css">
-    <title>Wymiana ocen</title>
+    <title>Ocena</title>
 </head>
 <body>
 <form method="post" action="">
-        <p>Imię ucznia:</p><input type="text" name="imie"><br>
-        <p>Nazwisko ucznia:</p><input type="text" name="nazwisko"><br>
-        <p>Ocena:</p><input type="number" min="1" max="6" name="ocena"><br><br>
-        <button type="submit">Wyślij</button>
-    </form><br>  
-    <footer>
-        <a href="SG.html">Powrót do Strony głuwnej</a>
-    </footer>
+    <input type="text" name="imie"><br>
+    <input type="text" name="nazwisko"><br>
+    <input type="number" name="ocena" min="1" max="6"><br>
+    <button type="submit">Wyslij</button>
+</form>
+<?php
+    $urz = "root";
+    $ho = "localhost";
+    $haslo = "";
+    $baza = "p2c";
+    $imie = $_POST['imie'];
+    $nazwisko = $_POST['nazwisko'];
+    $ocena = $_POST['ocena'];
+    $pol = mysqli_connect($ho, $urz, $haslo, $baza);
+    if (!$pol) {
+        die("Nie działa pol" . mysqli_connect_error());
+    }
+    $kwe = "UPDATE uczniowie_2c SET Ocena = '$ocena' WHERE Imie = '$imie' AND Nazwisko = '$nazwisko'";
+    if (mysqli_query($pol, $kwe)){
+        echo "Działa";
+    }
+    else{
+        echo"Nie Działa";
+    }
+    mysqli_close($pol);
+?> 
+<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>
-<?php
-$user = "root";
-$host = "localhost";
-$pass = "";
-$db = "praktyki_3_is";
-
-$con = mysqli_connect($host, $user, $pass, $db);
-
-if (!$con) {
-    die("Nie działa połączenie: " . mysqli_connect_error());
-}
-
-$nazwisko = $_POST['nazwisko'];
-$imie = $_POST['imie'];
-$ocena = $_POST['ocena'];
-
-$sql = "UPDATE uczniowie_2c SET Oceny = '$ocena' WHERE Imie = '$imie' AND Nazwisko = '$nazwisko'";
-
-if (mysqli_query($con, $sql)){
-    echo "dodany rekord";
-}
-else{
-    echo"błąd";
-}
-mysqli_close($con);
-?>
