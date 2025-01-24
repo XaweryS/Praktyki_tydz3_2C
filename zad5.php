@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style3.css">
-    <title>Formularz do usuwania uczniów</title>
+    <title>Wyrzucanie Uczniów</title>
 </head>
 <body>
-    <form method="post" action="">
-        <p>Imie:</p><input type="text" name="imie"><br>
-        <p>Nazwisko:</p><input type="text" name="nazwisko"><br><br>
-        <button type="submit">Usuń</button>
-    </form>
-    <?php
-    $user = "root";
-    $host = "localhost";
-    $pass = "";
-    $db = "praktyki_3_is";
-    $con = mysqli_connect($host, $user, $pass, $db);
-    if(!$con){
-        die("Nie działa połączenie" . mysqli_connect_error());
-    }
+<form method="post" action="">
+    <input type="text" name="imie"><br>
+    <input type="text" name="nazwisko"><br>
+    <button type="submit">Wyrzuć</button>
+<?php
+    $urz = "root";
+    $ho = "localhost";
+    $haslo = "";
+    $baza = "p2c";
     $imie = $_POST['imie'];
     $nazwisko = $_POST['nazwisko'];
-
-    $sql = "DELETE FROM `uczniowie_2c` WHERE Imie = '$imie' AND Nazwisko = '$nazwisko'";
-    if (mysqli_query($con, $sql)){
-        echo "Rekord został wyeliminowany";
+    $pol = mysqli_connect($ho, $urz, $haslo, $baza);
+    if(!$pol){
+        die("Nie działa pol" . mysqli_connect_error());
+    }
+    $kwe = "DELETE FROM `uczniowie_2c` WHERE Imie = '$imie' AND Nazwisko = '$nazwisko'";
+    if (mysqli_query($pol, $kwe)){
+        echo "<br>"."Uczeń wyrzucony";
     }
     else{
-        echo"błąd";
+        echo"Nie Działa";
     }
-    mysqli_close($con);
+    mysqli_close($pol);
 ?>
-<a href="StronaG.html">Powrót</a>
+<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>
