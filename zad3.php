@@ -12,6 +12,7 @@
     <input type="text" name="nazwisko"><br>
     <input type="number" name="wiek"><br>
     <button type="submit">Wyslij</button>
+    <br><a id="pow" href="StronaG.html">Powrót</a>
 </form>
 <?php
     $urz = "root";
@@ -34,6 +35,5 @@
     }
     mysqli_close($pol);
 ?>
-<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>
