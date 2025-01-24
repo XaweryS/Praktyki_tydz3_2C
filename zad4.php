@@ -11,6 +11,7 @@
     <input type="text" name="nazwisko"><br>
     <input type="number" name="ocena" min="1" max="6"><br>
     <button type="submit">Wyslij</button>
+    <br><a id="pow" href="StronaG.html">Powrót</a>
 </form>
 <?php
     $urz = "root";
@@ -33,6 +34,5 @@
     }
     mysqli_close($pol);
 ?> 
-<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>
