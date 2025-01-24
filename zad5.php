@@ -10,6 +10,8 @@
     <input type="text" name="imie"><br>
     <input type="text" name="nazwisko"><br>
     <button type="submit">Wyrzuć</button>
+    <br><a id="pow" href="StronaG.html">Powrót</a>
+</form>
 <?php
     $urz = "root";
     $ho = "localhost";
@@ -30,6 +32,5 @@
     }
     mysqli_close($pol);
 ?>
-<br><a id="pow" href="StronaG.html">Powrót</a>
 </body>
 </html>
