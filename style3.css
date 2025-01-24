@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: gray;
 }
 input{
     margin-top: 10px;
@@ -19,6 +19,5 @@ form{
 #pow{
     text-decoration: none;
     font-size: 30px;
-    color: white;
-    line-height: 700px; 
+    color: white; 
 }
